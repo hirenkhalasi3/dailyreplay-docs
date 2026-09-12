@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Privacy Policy — Daily Replay</title>
+    <style>
+        :root {
+            --primary: #1E6B52;
+            --primary-light: #E8F5EE;
+            --on-primary: #FFFFFF;
+            --surface: #F8FBF8;
+            --on-surface: #191C1B;
+            --outline: #555F59;
+            --card-bg: #FFFFFF;
+            --card-border: #E0E5E1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--surface);
+            color: var(--on-surface);
+            line-height: 1.65;
+            padding: 40px 20px;
+        }
+        .container { max-width: 780px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); }
+        .nav-back { display: inline-flex; align-items: center; text-decoration: none; color: var(--primary); font-weight: 600; font-size: 14px; margin-bottom: 24px; }
+        .nav-back:hover { text-decoration: underline; }
+        h1 { font-size: 32px; font-weight: 800; color: var(--on-surface); margin-bottom: 8px; }
+        .meta { font-size: 14px; color: var(--outline); margin-bottom: 24px; border-bottom: 1px solid var(--card-border); padding-bottom: 16px; }
+        h2 { font-size: 22px; font-weight: 700; color: var(--primary); margin-top: 32px; margin-bottom: 12px; border-bottom: 1px solid var(--primary-light); padding-bottom: 6px; }
+        h3 { font-size: 17px; font-weight: 600; color: var(--on-surface); margin-top: 20px; margin-bottom: 8px; }
+        p { margin-bottom: 16px; font-size: 15px; color: #2C3531; }
+        ul { margin-left: 24px; margin-bottom: 16px; font-size: 15px; color: #2C3531; }
+        li { margin-bottom: 8px; }
+        .callout {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .callout strong { color: var(--primary); }
+        .footer { text-align: center; margin-top: 40px; font-size: 13px; color: var(--outline); border-top: 1px solid var(--card-border); padding-top: 20px; }
+        a { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <a href=index.html class=nav-back>&larr; Back to Documentation Overview</a>
+
+        <h1>Privacy Policy for Daily Replay</h1>
+        <div class=meta>
+            <strong>Effective Date:</strong> September 10, 2026 &bull; <strong>Last Updated:</strong> September 12, 2026
+        </div>
+
+        <p>Daily Replay (we, our, or the App) is developed with an uncompromising commitment to personal privacy. We believe your daily thoughts, reflections, habits, and physical activity belong strictly to you.</p>
+
+        <p>This Privacy Policy explains how Daily Replay operates, why certain device permissions are requested, how data is processed, and how your privacy is guaranteed by design.</p>
+
+        <h2>1. Core Architectural Tenet: 100% On-Device &amp; Encrypted</h2>
+        <div class=callout>
+            <strong>Strict Privacy Guarantee:</strong> All personal journal entries, screen time analytics, Health Connect steps, and reflection insights are stored strictly on your local physical device inside a hardware-encrypted SQLite database (AES-256 via SQLCipher).
+        </div>
+        <ul>
+            <li><strong>Zero Cloud Storage for User Journals:</strong> Your reflections, mood ratings, digital screen times, and step counts are processed and stored strictly on your local physical device. We operate no private servers, cloud databases, or remote reflection processing pipelines.</li>
+            <li><strong>Dedicated Network Usage:</strong> The App uses network permissions (<code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>) exclusively for two external platform services:
+                <ol style=margin-left: 20px; margin-top: 6px;>
+                    <li><strong>Google Play In-App Billing:</strong> To verify subscriptions and licenses.</li>
+                    <li><strong>Google Mobile Ads (AdMob):</strong> To deliver banner and rewarded video ads to free-tier users.</li>
+                </ol>
+            </li>
+            <li><strong>Zero Third-Party Telemetry:</strong> We do not embed Firebase Analytics, Facebook SDK, Adjust, AppsFlyer, Mixpanel, Sentry, or any third-party marketing or tracking SDKs.</li>
+            <li><strong>No User Accounts:</strong> Daily Replay requires no account registration, login, email address, password, or cloud profile.</li>
+        </ul>
+
+        <h2>2. Permissions &amp; Data Access</h2>
+        <p>Daily Replay requests only the minimum permissions necessary to deliver its core reflection journal features and monetization.</p>
+
+        <h3>A. Health Connect (<code>android.permission.health.READ_STEPS</code>)</h3>
+        <ul>
+            <li><strong>Scope:</strong> Read-only access to physical step counts recorded by Android Health Connect (<code>StepsRecord</code>).</li>
+            <li><strong>Purpose:</strong> To compile your daily movement metrics into your private reflection timeline and compute personal activity baselines.</li>
+            <li><strong>Handling &amp; Retention:</strong> Step counts are retrieved locally on your device and stored exclusively within the encrypted local database.</li>
+            <li><strong>Strict Prohibition on Advertising Usage:</strong> In strict adherence to Google Play's Health Apps Policy, Daily Replay <strong>never</strong> sells, shares, transfers, or discloses your Health Connect data to any third party, advertising platform, data broker, or external service. Health data is completely isolated from the Google Mobile Ads SDK.</li>
+        </ul>
+
+        <h3>B. Usage Access (<code>android.permission.PACKAGE_USAGE_STATS</code>)</h3>
+        <ul>
+            <li><strong>Scope:</strong> Read access to on-device foreground application usage intervals via Android's <code>UsageStatsManager</code>.</li>
+            <li><strong>Purpose:</strong> To calculate daily screen engagement duration, application categories, and digital focus blocks for your personal diary.</li>
+            <li><strong>Handling &amp; Retention:</strong> Processed strictly in device memory and rolled up into encrypted hourly summary segments. Package identifiers and usage durations are stored locally and never leave your phone.</li>
+        </ul>
+
+        <h3>C. Visual Media Attachments</h3>
+        <ul>
+            <li><strong>Scope:</strong> User-selected photo attachments to daily memories.</li>
+            <li><strong>Privacy Design:</strong> Daily Replay utilizes the modern Android Photo Picker. The App requests <strong>zero</strong> broad storage permissions (<code>READ_EXTERNAL_STORAGE</code> and <code>READ_MEDIA_IMAGES</code> are omitted). Selected photos are downsampled and stored in sandboxed, app-private storage.</li>
+        </ul>
+
+        <h3>D. Notifications (<code>android.permission.POST_NOTIFICATIONS</code>)</h3>
+        <ul>
+            <li><strong>Scope:</strong> Delivery of nightly reflection reminders.</li>
+            <li><strong>Purpose:</strong> Scheduled purely on-device via Jetpack <code>WorkManager</code>. Notifications contain no personal telemetry and trigger no remote server requests.</li>
+        </ul>
+
+        <h3>E. Google Play In-App Billing</h3>
+        <ul>
+            <li><strong>Scope:</strong> Verification and entitlement management for optional Daily Replay Pro features.</li>
+            <li><strong>Handling:</strong> Transactions are processed securely and directly by the Google Play Store client. Daily Replay receives only localized entitlement status without collecting credit card numbers or financial account details.</li>
+        </ul>
+
+        <h3>F. Google Mobile Ads (AdMob) &amp; Consent (UMP SDK)</h3>
+        <ul>
+            <li><strong>Scope:</strong> Delivery of anchored adaptive banners and user-initiated rewarded video ads to non-paying (Free) users.</li>
+            <li><strong>Data Collected by Google:</strong> The Google Mobile Ads SDK may automatically collect device identifiers (including Android Advertising ID / <code>AD_ID</code>), approximate IP location, and ad interaction diagnostics to serve ads and prevent fraud. All data in transit is encrypted using HTTPS.</li>
+            <li><strong>EEA &amp; UK Consent (UMP SDK):</strong> For users in the European Economic Area (EEA) and the United Kingdom, Daily Replay integrates Google's certified User Messaging Platform (UMP) SDK to gather user consent in compliance with GDPR and ePrivacy directives.</li>
+            <li><strong>Complete Ad Removal:</strong> Upgrading to Daily Replay Pro immediately deactivates all advertisements and suppresses all ad requests.</li>
+        </ul>
+
+        <h2>3. Data Storage &amp; Cryptographic Security</h2>
+        <p>All relational journal entries, daily summaries, hourly focus segments, and reflection prompts are stored in a local SQLite database secured with <strong>256-bit AES encryption via SQLCipher</strong>.</p>
+        <ul>
+            <li>Database encryption keys are generated randomly on first launch and stored securely in the hardware-backed <strong>Android KeyStore</strong>.</li>
+            <li>Database files are explicitly excluded from cloud backups (<code>data_extraction_rules.xml</code> and <code>backup_rules.xml</code>), ensuring that unencrypted copies are never uploaded to cloud providers.</li>
+        </ul>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <p>Because all data resides exclusively on your physical device:</p>
+        <ul>
+            <li><strong>Individual Memory Deletion:</strong> You can remove photos or update reflection logs at any time from within the timeline interface.</li>
+            <li><strong>Complete Data Erasure:</strong> You can completely and permanently delete all stored data, reflections, and encryption keys at any time by clearing storage via <strong>Android Settings &gt; Apps &gt; Daily Replay &gt; Storage &amp; Cache &gt; Clear Storage</strong>, or by uninstalling the application.</li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>Daily Replay does not target children under the age of 13 and does not collect any personal information from any user, including children.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have questions, feedback, or concerns regarding Daily Replay's privacy practices, please reach out to us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href=mailto:privacy@dailyreplay.app>privacy@dailyreplay.app</a></li>
+            <li><strong>Documentation Repository:</strong> <a href=https://github.com/hirenkhalasi3/dailyreplay-docs>github.com/hirenkhalasi3/dailyreplay-docs</a></li>
+        </ul>
+
+        <div class=footer>
+            <p>&copy; 2026 Daily Replay &bull; <a href=terms.html>Terms of Service</a> &bull; <a href=index.html>Documentation Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

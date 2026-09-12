@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Daily Replay — Legal & Policy Documentation</title>
+    <style>
+        :root {
+            --primary: #1E6B52;
+            --primary-light: #E8F5EE;
+            --on-primary: #FFFFFF;
+            --surface: #F8FBF8;
+            --on-surface: #191C1B;
+            --outline: #707973;
+            --card-bg: #FFFFFF;
+            --card-border: #E0E5E1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--surface);
+            color: var(--on-surface);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container { max-width: 720px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .app-icon {
+            width: 80px; height: 80px; border-radius: 20px;
+            background: linear-gradient(135deg, #1E6B52 0%, #34A853 100%);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 40px; box-shadow: 0 8px 24px rgba(30, 107, 82, 0.2);
+            margin-bottom: 16px;
+        }
+        h1 { font-size: 32px; font-weight: 700; color: var(--on-surface); margin-bottom: 8px; }
+        .tagline { font-size: 16px; color: var(--outline); }
+        .badge {
+            display: inline-block; background-color: var(--primary-light);
+            color: var(--primary); font-size: 13px; font-weight: 600;
+            padding: 6px 14px; border-radius: 20px; margin-top: 14px;
+        }
+        .card-grid { display: grid; gap: 20px; margin-top: 30px; }
+        .doc-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: 16px; padding: 24px; text-decoration: none;
+            color: inherit; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .doc-card:hover {
+            transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+        .doc-info h2 { font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
+        .doc-info p { font-size: 14px; color: var(--outline); }
+        .arrow { font-size: 24px; color: var(--primary); margin-left: 16px; }
+        .footer {
+            text-align: center; margin-top: 60px; font-size: 13px;
+            color: var(--outline); border-top: 1px solid var(--card-border);
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <div class=app-icon>📖</div>
+            <h1>Daily Replay</h1>
+            <p class=tagline>Automated Private Daily Reflection & Wellbeing Diary</p>
+            <span class=badge>🔒 100% On-Device &amp; Encrypted</span>
+        </div>
+
+        <div class=card-grid>
+            <a href=privacy.html class=doc-card>
+                <div class=doc-info>
+                    <h2>Privacy Policy</h2>
+                    <p>Read our commitment to zero cloud telemetry, hardware-encrypted storage, and Health Connect data isolation.</p>
+                </div>
+                <div class=arrow>&rarr;</div>
+            </a>
+
+            <a href=terms.html class=doc-card>
+                <div class=doc-info>
+                    <h2>Terms of Service</h2>
+                    <p>Review licensing terms, in-app purchases and subscription renewal policies, and software usage terms.</p>
+                </div>
+                <div class=arrow>&rarr;</div>
+            </a>
+        </div>
+
+        <div class=footer>
+            <p>&copy; 2026 Daily Replay. All rights reserved.</p>
+            <p style=margin-top: 6px;>Questions? Contact: <a href=mailto:privacy@dailyreplay.app style=color: var(--primary);>privacy@dailyreplay.app</a></p>
+        </div>
+    </div>
+</body>
+</html>
